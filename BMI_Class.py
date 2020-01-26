@@ -20,6 +20,9 @@ class BMI_Class:
         else:
             return "obese"
 
+    def get_BMI_Values(self):
+        return self.BMI_Values
+
     def graph_BMI(self):
         plt.plot(self.weight_values, self.BMI_Values)
         plt.xlabel('weight')
