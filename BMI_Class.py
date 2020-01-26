@@ -4,11 +4,12 @@ class BMI_Class:
     weight_values = []
     height_values = []
     BMI_Values = []
-
+    BMI = float()
     def add_BMI(self, weight, height):
         self.weight_values.append(weight)
         self.height_values.append(height)
-        self.BMI_Values.append((weight/2.2)/(((height*2.54)/100)**2))
+        self.BMI = (weight/2.2)/(((height*2.54)/100)**2)
+        self.BMI_Values.append(self.BMI)
 
     def get_Weight_Class(self):
         if self.BMI < 18.5:
