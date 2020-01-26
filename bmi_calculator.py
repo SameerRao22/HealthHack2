@@ -31,12 +31,14 @@ final_height = height_converter(height)
 bmi = bmi_calculator(final_weight, final_height)
 bmi_class = bmi_range(bmi)
 
-print("Your BMI is ", bmi)
-if bmi_class == "healthy":
-    print("You have a healthy bodyweight.")
-else:
-    print("You are " + bmi_class)
 
+# print;
+# print("Your BMI is ", round(bmi, 1))
+# if bmi_class == "healthy":
+#     print("You have a healthy bodyweight.")
+# else:
+#     print("You are " + bmi_class)
+#
 
 
 
