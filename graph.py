@@ -1,5 +1,3 @@
-import matplotlib
-
 import matplotlib.pyplot as plt
 
 def underweight(weight):
@@ -14,15 +12,10 @@ def overweight(weight):
     height = (weight/30) ** 0.5
     return height
 
-
-
-
 def bmi_graph():
     weight1 = []
     height1 = []
-    weight2 = []
     height2 = []
-    weight3 = []
     height3 = []
     for x in range(0, 301):
         weight1.append(x*2.2)

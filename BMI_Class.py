@@ -1,5 +1,7 @@
-import matplotlib.pyplot as plt
-import numpy as np
+from matplotlib.figure import Figure
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
+from tkinter import *
+
 class BMI_Class:
     weight_values = []
     height_values = []
@@ -24,8 +26,21 @@ class BMI_Class:
         return self.BMI_Values
 
     def graph_BMI(self):
-        plt.plot(self.weight_values, self.BMI_Values)
-        plt.xlabel('weight')
-        plt.ylabel('BMI Values')
-        plt.title('BMI')
-        plt.show()
+        window = Tk()
+        window.title("BMI Chart")
+        window.geometry("500x500")
+        f = Figure(figsize=(5, 5), dpi=100)
+        a = f.add_subplot(111)
+        a.plot([1, 2, 3, 4, 5, 6, 7, 8], [5, 6, 1, 3, 8, 9, 3, 5])
+
+        a = f.add_subplot(112)
+        a.plot([1, 2, 3, 4, 5, 6, 7, 8], [5, 6, 1, 3, 8, 9, 3, 5])
+
+        canvas = FigureCanvasTkAgg(f, window)
+        canvas.draw()
+        canvas.get_tk_widget().pack(side=BOTTOM, fill=BOTH, expand=True)
+        toolbar = NavigationToolbar2Tk(canvas, window)
+        toolbar.update()
+        canvas._tkcanvas.pack()
+
+        window.mainloop()
