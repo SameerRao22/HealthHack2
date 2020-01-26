@@ -1,8 +1,6 @@
 import matplotlib
 
 import matplotlib.pyplot as plt
-#x/y^2 = 18.5
-#weight/heigth^2 = 19.5
 
 def underweight(weight):
     height = (weight/18.5) ** 0.5
@@ -18,39 +16,44 @@ def overweight(weight):
 
 
 
-weight1 = []
-height1 = []
-weight2 = []
-height2 = []
-weight3 = []
-height3 = []
+
+def bmi_graph():
+    weight1 = []
+    height1 = []
+    weight2 = []
+    height2 = []
+    weight3 = []
+    height3 = []
+    for x in range(0, 301):
+        weight1.append(x*2.2)
+
+    for x in range(0, 301):
+        height1.append(underweight(x)*39.37)
+
+    for x in range(0, 301):
+        height2.append(normalweight(x)*39.37)
+
+    for x in range(0, 301):
+        height3.append(overweight(x)*39.37)
+    plt.plot(height1, weight1)
+    plt.plot(height2, weight1)
+    plt.plot(height3, weight1)
+    plt.suptitle('BMI chart', fontsize=16)
+
+    plt.ylabel('weight(pounds)')
+    plt.xlabel('height(inches)')
 
 
-for x in range(0, 301):
-    weight1.append(x)
-
-for x in range(0, 301):
-    height1.append(underweight(x))
-
-for x in range(0, 301):
-    height2.append(normalweight(x))
-
-for x in range(0, 301):
-    height3.append(overweight(x))
-
-
-#print(height)
-
-#print(weight)
-
-
-plt.plot(height1, weight1)
-plt.plot(height2, weight1)
-plt.plot(height3, weight1)
+def my_bmi(height, weight):
+    plt.plot(height, weight, 'r+')
 
 
 
-plt.ylabel('weight')
-plt.xlabel('height')
+bmi_graph()
+my_bmi(75, 145)
+my_bmi(75, 165)
+my_bmi(75, 205)
+my_bmi(75, 250)
+
 
 plt.show()
