@@ -1,29 +1,39 @@
 from tkinter import *
+from tkinter import ttk
 
+def clicked():
+    weightNum =  weight_box.get()
+    heightNum = height_box.get()
+    print("weight: " + weightNum, "height: ", heightNum)
 
-from tkinter import messagebox
+window = Tk()
+window.title("Welcome to LikeGeeks app")
+window.geometry("500x500")
 
+tab_control = ttk.Notebook(window)
+tab1 = ttk.Frame(tab_control)
+tab2 = ttk.Frame(tab_control)
 
-def enter_height():
-    height = entry_1.get()
-    string_to_display = "Hello" + height
-    label_2 = Label(root)
-    label_2["text"] = string_to_display
-    label_2.grid(row=3, column=1)
+tab_control.add(tab1, text='First')
+tab_control.add(tab2, text='Second')
 
+weight_label = Label(tab1, text='Enter your Weight: ')
+weight_label.grid(column=0, row=0)
+weight_box = Entry(tab1, width = 10)
+weight_box.grid(column = 1, row = 0)
+# weight_button = Button(tab1, text = "Enter")
+# weight_button.grid(column=2, row=0)
 
-root = Tk()
+height_label = Label(tab1, text='Enter your Height: ')
+height_label.grid(column=0, row=1)
+height_box = Entry(tab1, width = 10)
+height_box.grid(column = 1, row = 1)
+# height_button = Button(tab1, text = "Enter")
+# height_button.grid(column=2, row=1)
 
-label_1 = Label(root, text= "Height: ")
-entry_1 = Entry(root)
-button_1 = Button(root, text="Enter", command=enter_height);
+submit_button = Button(tab1, text = "Submit", command = clicked)
+submit_button.grid(column = 0, row = 5)
 
+tab_control.pack(expand=1, fill='both')
 
-
-label_1.grid(row=0, column=0)
-entry_1.grid(row=0, column=1)
-button_1.grid(row=1, column=0)
-
-
-root.mainloop()
-
+window.mainloop()
