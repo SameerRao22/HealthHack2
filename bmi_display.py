@@ -2,13 +2,17 @@ from tkinter import *
 from tkinter import ttk
 from BMI_Class import BMI_Class
 from tkinter import messagebox
-
+import graph
 def SubmitClicked():
     weightNum =  float(weight_box.get())
     heightNum = float(height_box.get())
     BMI_Chart.add_BMI(weightNum, heightNum)
     bmi_label.configure(text = str(BMI_Chart.BMI))
     messagebox.showinfo('BMI CHART', "Your BMI was successfully calculated\n If you want to see the graph switch to tab 2 or enter more values")
+
+def GenerateGraph():
+    graph.bmi_graph()
+    graph.plt.show()
 
 window = Tk()
 window.title("BMI Chart")
@@ -40,7 +44,7 @@ submit_button.grid(column = 0, row = 4)
 bmi_label = Label(tab1, text = "BMI: ")
 bmi_label.grid(column = 0, row = 5)
 
-graph_generator = Button(tab2, text = "Generate Graph")
+graph_generator = Button(tab2, text = "Generate Graph", command = GenerateGraph)
 graph_generator.grid(column = 0, row = 0)
 
 tab_control.pack(expand=1, fill='both')
