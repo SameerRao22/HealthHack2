@@ -21,10 +21,7 @@ def bmi_range(my_bmi):
         weight_class = "overweight"
     else:
         weight_class = "obese"
-    if a == 1:
-        return print("You weight is " + weight_class)
-    else:
-        return print("You are: " + weight_class)
+
 
 weight = int(input("Enter your weight(pounds): "))
 height = int(input("Enter your height(inches): "))
@@ -32,6 +29,7 @@ height = int(input("Enter your height(inches): "))
 final_weight = weight_converter(weight)
 final_height = height_converter(height)
 bmi = bmi_calculator(final_weight, final_height)
+
 
 
 
