@@ -1,10 +1,10 @@
 from tkinter import *
 from tkinter import ttk
 
-def weightButton():
-
-
-
+def clicked():
+    weightNum =  weight_box.get()
+    heightNum = height_box.get()
+    print("weight: " + weightNum, "height: ", heightNum)
 
 window = Tk()
 window.title("Welcome to LikeGeeks app")
@@ -31,8 +31,8 @@ height_box.grid(column = 1, row = 1)
 # height_button = Button(tab1, text = "Enter")
 # height_button.grid(column=2, row=1)
 
-submit_button = Button(tab1, text = "Submit")
-
+submit_button = Button(tab1, text = "Submit", command = clicked)
+submit_button.grid(column = 0, row = 5)
 
 tab_control.pack(expand=1, fill='both')
 
