@@ -5,13 +5,17 @@ from tkinter import messagebox
 import graph
 
 def SubmitClicked():
-    weightNum =  float(weight_box.get())
+    global weightNum
+    global heightNum
+    weightNum = float(weight_box.get())
     heightNum = float(height_box.get())
     BMI_Chart.add_BMI(weightNum, heightNum)
     bmi_label.configure(text = str(BMI_Chart.BMI))
-    messagebox.showinfo('BMI CHART', "Your BMI was successfully calculated\n If you want to see the graph switch to tab 2 or enter more values")
+    messagebox.showinfo('BMI CHART', "Your BMI was successfully calculated\n If you want to see the graph switch to tab 2 and click generate graph")
 
 def GenerateGraph():
+    graph.bmi_graph()
+    graph.my_bmi(heightNum, weightNum)
     graph.callgraph()
 
 window = Tk()

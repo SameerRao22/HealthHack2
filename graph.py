@@ -1,5 +1,5 @@
 import matplotlib
-
+import BMI_Class
 import matplotlib.pyplot as plt
 
 def underweight(weight):
@@ -48,7 +48,5 @@ def my_bmi(height, weight):
     plt.plot(height, weight, 'r+')
 
 def callgraph():
-    bmi_graph()
-    my_bmi(72, 172)
     plt.show()
 
