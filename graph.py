@@ -47,13 +47,8 @@ def bmi_graph():
 def my_bmi(height, weight):
     plt.plot(height, weight, 'r+')
 
+def callgraph():
+    bmi_graph()
+    my_bmi(72, 172)
+    plt.show()
 
-
-bmi_graph()
-my_bmi(75, 145)
-my_bmi(75, 165)
-my_bmi(75, 205)
-my_bmi(75, 250)
-
-
-plt.show()
