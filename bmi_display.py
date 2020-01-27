@@ -20,7 +20,7 @@ def SubmitClicked():
         ideal_weight = 18.5 * new_height_num**2
     elif (BMI_Chart.BMI < 25):
         message = "normal weight."
-        ideal_weight = "You're weight is ideal."
+        ideal_weight = new_weight_num
     elif (BMI_Chart.BMI < 30):
         message = "You are overweight"
         ideal_weight = 25 * new_height_num ** 2
@@ -28,7 +28,8 @@ def SubmitClicked():
         message = "You are obese."
         ideal_weight = 25 * new_height_num ** 2
     weight_class_label.configure(text = message)
-    ideal_weight_label.configure(text = 'Target weight: '+ str(round(ideal_weight*2.2, 1)) + "pounds")
+    ideal_weight_label.configure(text='Target weight: ' + str(round(ideal_weight*2.2, 1)) + " pounds")
+
     messagebox.showinfo('BMI CHART', "Your BMI was successfully calculated\n If you want to see the graph switch to tab 2 and click generate graph")
 
 
